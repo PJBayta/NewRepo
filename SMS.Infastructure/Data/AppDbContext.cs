@@ -11,8 +11,8 @@ namespace SMS.Infastructure.Data
             base.OnConfiguring(optionsBuilder);
         }
 
-        DbSet<Student> Students { get; set; }
+        public DbSet<Student> Students { get; set; }
 
-        DbSet<Programs> Programs { get; set; }
+        public DbSet<Programs> Programs { get; set; }
     }
 }
