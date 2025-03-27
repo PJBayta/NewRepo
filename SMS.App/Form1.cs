@@ -25,6 +25,7 @@ namespace SMS.App
             using (var dbContext = new AppDbContext())
             {
                var program = dbContext.Programs.FirstOrDefault();
+               createStudent(program.ProgramId, program.ProgramName, program.Description);
             }
                 buttonShow_Click(sender, e);
             //createStudent(1, "Shakira", "sha@kira.com");
@@ -33,7 +34,7 @@ namespace SMS.App
         private void buttonShow_Click(object sender, EventArgs e)
         {
             
-            createStudent(2, "Joan Dela Cruz", "joan@delacruz.com");
+            //createStudent(2, "Joan Dela Cruz", "joan@delacruz.com");
             
         }
 
