@@ -24,7 +24,7 @@ namespace SMS.App
         {
             using (var dbContext = new AppDbContext())
             {
-               var program = dbContext.Programs.FirstOrDefault();
+               var program = dbContext.Programs.Where(p => p.ProgramName == "EE").FirstOrDefault();
                createStudent(program.ProgramId, program.ProgramName, program.Description);
             }
                 buttonShow_Click(sender, e);
