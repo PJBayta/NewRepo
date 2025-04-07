@@ -17,6 +17,11 @@ namespace SMS.App
         public ProgramView()
         {
             InitializeComponent();
+
+            dataGridViewProgramList.CellClick += (s, e) =>
+            {
+                GetInfoEvent?.Invoke(this, e);
+            };
         }
 
         public event EventHandler CreateEvent;
@@ -27,9 +32,12 @@ namespace SMS.App
 
         public event EventHandler DeleteEvent;
 
-        public int ProgramId { get => Convert.ToInt16(textBoxID.Text); set => textBoxID.Text = value.ToString(); }
+        public event EventHandler GetInfoEvent;
+
+        public int ProgramId { get => string.IsNullOrEmpty(textBoxID.Text) ? 0 : Convert.ToInt16(textBoxID.Text); set => textBoxID.Text = value.ToString(); }
         public string ProgramName { get => textBoxProgramName.Text.Trim(); set => textBoxProgramName.Text = value; }
         public string Description { get => textBoxDescription.Text.Trim(); set => textBoxDescription.Text = value; }
+        public string SearchValue { get => textBoxSearch.Text.Trim(); }
 
         public void GetProgramList(BindingSource bindingSource)
         {
@@ -54,6 +62,16 @@ namespace SMS.App
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             DeleteEvent?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void SetMessage(string message)
+        {
+            MessageBox.Show(message);
+        }
+
+        private void ProgramView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -39,12 +39,14 @@
             buttonUpdate = new Button();
             buttonDelete = new Button();
             dataGridViewProgramList = new DataGridView();
+            textBoxSearch = new TextBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProgramList).BeginInit();
             SuspendLayout();
             // 
             // textBoxProgramName
             // 
-            textBoxProgramName.Location = new Point(39, 88);
+            textBoxProgramName.Location = new Point(26, 119);
             textBoxProgramName.Name = "textBoxProgramName";
             textBoxProgramName.Size = new Size(184, 23);
             textBoxProgramName.TabIndex = 0;
@@ -52,7 +54,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(39, 70);
+            label1.Location = new Point(26, 101);
             label1.Name = "label1";
             label1.Size = new Size(88, 15);
             label1.TabIndex = 1;
@@ -61,7 +63,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(39, 118);
+            label2.Location = new Point(26, 149);
             label2.Name = "label2";
             label2.Size = new Size(67, 15);
             label2.TabIndex = 3;
@@ -69,7 +71,7 @@
             // 
             // textBoxDescription
             // 
-            textBoxDescription.Location = new Point(39, 136);
+            textBoxDescription.Location = new Point(26, 167);
             textBoxDescription.Name = "textBoxDescription";
             textBoxDescription.Size = new Size(184, 23);
             textBoxDescription.TabIndex = 2;
@@ -77,7 +79,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(39, 25);
+            label3.Location = new Point(26, 56);
             label3.Name = "label3";
             label3.Size = new Size(24, 15);
             label3.TabIndex = 5;
@@ -85,14 +87,14 @@
             // 
             // textBoxID
             // 
-            textBoxID.Location = new Point(39, 43);
+            textBoxID.Location = new Point(26, 74);
             textBoxID.Name = "textBoxID";
             textBoxID.Size = new Size(184, 23);
             textBoxID.TabIndex = 4;
             // 
             // buttonCreate
             // 
-            buttonCreate.Location = new Point(39, 184);
+            buttonCreate.Location = new Point(26, 215);
             buttonCreate.Name = "buttonCreate";
             buttonCreate.Size = new Size(184, 23);
             buttonCreate.TabIndex = 6;
@@ -102,7 +104,7 @@
             // 
             // buttonRead
             // 
-            buttonRead.Location = new Point(39, 213);
+            buttonRead.Location = new Point(26, 244);
             buttonRead.Name = "buttonRead";
             buttonRead.Size = new Size(184, 23);
             buttonRead.TabIndex = 7;
@@ -112,7 +114,7 @@
             // 
             // buttonUpdate
             // 
-            buttonUpdate.Location = new Point(39, 242);
+            buttonUpdate.Location = new Point(26, 273);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new Size(184, 23);
             buttonUpdate.TabIndex = 8;
@@ -122,7 +124,7 @@
             // 
             // buttonDelete
             // 
-            buttonDelete.Location = new Point(39, 271);
+            buttonDelete.Location = new Point(26, 302);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(184, 23);
             buttonDelete.TabIndex = 9;
@@ -133,16 +135,34 @@
             // dataGridViewProgramList
             // 
             dataGridViewProgramList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProgramList.Location = new Point(244, 25);
+            dataGridViewProgramList.Location = new Point(240, 74);
             dataGridViewProgramList.Name = "dataGridViewProgramList";
-            dataGridViewProgramList.Size = new Size(423, 269);
+            dataGridViewProgramList.Size = new Size(423, 251);
             dataGridViewProgramList.TabIndex = 10;
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.Location = new Point(479, 33);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(184, 23);
+            textBoxSearch.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(479, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(33, 15);
+            label4.TabIndex = 12;
+            label4.Text = "Filter";
             // 
             // ProgramView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(704, 341);
+            ClientSize = new Size(704, 382);
+            Controls.Add(label4);
+            Controls.Add(textBoxSearch);
             Controls.Add(dataGridViewProgramList);
             Controls.Add(buttonDelete);
             Controls.Add(buttonUpdate);
@@ -157,6 +177,7 @@
             Name = "ProgramView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Program Management";
+            Load += ProgramView_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewProgramList).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -175,5 +196,7 @@
         private Button buttonUpdate;
         private Button buttonDelete;
         private DataGridView dataGridViewProgramList;
+        private TextBox textBoxSearch;
+        private Label label4;
     }
 }
