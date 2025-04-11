@@ -16,3 +16,4 @@ namespace SMS.Infastructure.Data
         public DbSet<Programs> Programs { get; set; }
     }
 }
+ 
