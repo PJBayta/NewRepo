@@ -22,6 +22,8 @@ namespace SMS.Infastructure.Data
             base.OnModelCreating(builder);
         }
 
+        public DbSet<AppUser> AppUsers { get; set; }
+
         public DbSet<Student> Students { get; set; }
 
         public DbSet<Programs> Programs { get; set; }
