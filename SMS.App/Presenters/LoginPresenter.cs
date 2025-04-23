@@ -2,11 +2,6 @@
 using SMS.App.Views.IViews;
 using SMS.Domain;
 using SMS.Infastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SMS.App.Presenters
 {
@@ -36,6 +31,12 @@ namespace SMS.App.Presenters
                 {
                     _message = "User not found";
                     _view.ShowMessage(_message);
+
+                    //gibutang ra nko ni kay dli ga update ako database :<
+                    //IProgramView programView = new ProgramView();
+                    //new ProgramPresenter(programView);
+                    //programView.ShowForm();
+
                     return;
                 }
 
@@ -47,10 +48,13 @@ namespace SMS.App.Presenters
 
                     IProgramView programView = new ProgramView();
                     new ProgramPresenter(programView);
+
+                    programView.ShowForm();
                 }
                 else
                 {
                     _message = "Invalid password";
+                    _view.ShowMessage(_message);
                     return;
                 }
             }

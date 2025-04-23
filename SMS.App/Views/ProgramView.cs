@@ -73,5 +73,10 @@ namespace SMS.App
         {
 
         }
+
+        public void ShowForm()
+        {
+            Show();
+        }
     }
 }

@@ -28,17 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBoxUsername = new TextBox();
             textBoxPassword = new TextBox();
             buttonLogin = new Button();
             label1 = new Label();
             label2 = new Label();
+            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
+            guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             SuspendLayout();
             // 
             // textBoxUsername
             // 
             textBoxUsername.Location = new Point(138, 63);
             textBoxUsername.Name = "textBoxUsername";
+            textBoxUsername.PlaceholderText = "Enter username";
             textBoxUsername.Size = new Size(126, 23);
             textBoxUsername.TabIndex = 0;
             // 
@@ -46,12 +50,13 @@
             // 
             textBoxPassword.Location = new Point(138, 104);
             textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.PasswordChar = '*';
             textBoxPassword.Size = new Size(126, 23);
             textBoxPassword.TabIndex = 1;
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new Point(159, 156);
+            buttonLogin.Location = new Point(163, 152);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(75, 23);
             buttonLogin.TabIndex = 2;
@@ -78,16 +83,28 @@
             label2.TabIndex = 4;
             label2.Text = "Password";
             // 
+            // guna2BorderlessForm1
+            // 
+            guna2BorderlessForm1.ContainerControl = this;
+            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2Elipse1
+            // 
+            guna2Elipse1.BorderRadius = 360;
+            guna2Elipse1.TargetControl = this;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(342, 247);
+            ClientSize = new Size(342, 235);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(buttonLogin);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxUsername);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
             Text = "LoginForm";
             ResumeLayout(false);
@@ -101,5 +118,7 @@
         private Button buttonLogin;
         private Label label1;
         private Label label2;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
